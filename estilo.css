@@ -6,19 +6,21 @@
 
 
 body{
-    background-color: rgb(207, 207, 207);
+    background-color: rgb(227, 200, 231);
     margin: 0;
 }
-body h1 {
-    font-family:'Glory', sans-serif;
-    font-size: 30pt;
-    text-align: center;
-    color: white;
+
+.fundo {
+    background-image: linear-gradient(to left, rgb(44, 163, 199), rgb(156, 13, 89));
+    padding: 1%;
 }
 
-#fundo {
-    background-image: url(back.jpg);
-    padding: 1%;
+.fundo header {
+    font-family:'Glory', sans-serif;
+    font-size: 20pt;
+    text-align: center;
+    color: white;
+    text-shadow: 3px 3px 5px black;
 }
 
 /* Caixa de texto + botão add */
@@ -31,6 +33,7 @@ body h1 {
     width: 45%;
     padding: 1%;
     border: solid white 1px;
+    border-radius: 5px;
 }
 
 .caixaTexto button {
@@ -39,10 +42,11 @@ body h1 {
     width: 10%;
     padding: 1%;
     cursor: pointer;
-    background-color: rgb(2, 167, 153);
+    background-color: rgb(116, 24, 168);
     border-radius: 5px;
-    border: solid rgb(2, 167, 153) 1px;
+    border: solid rgb(116, 24, 168) 1px;
     transition: 1s;
+    color: white;
 }
 .caixaTexto button:hover {
     background-color: rgb(1, 202, 95);
@@ -67,6 +71,7 @@ body h1 {
     font-size: 14pt;
     color: rgb(0, 0, 0);
     transition: 1s;
+    box-shadow:10px 5px 5px rgba(0, 0, 0, 0.705);
 }
 
 .listaNaTela li:hover {
@@ -76,8 +81,8 @@ body h1 {
 
 .listaNaTela button {
     float: right;
-    background-color: white;
-    border: solid rgb(255, 255, 255) 2px;
+    background-color: rgb(116, 24, 168);
+    border: solid rgb(116, 24, 168) 2px;
     width: 35px;
     height: 30px;
     border-radius: 100%;

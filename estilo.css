@@ -1,0 +1,100 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Glory:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&family=Glory:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap');
+
+
+body{
+    background-color: rgb(207, 207, 207);
+    margin: 0;
+}
+body h1 {
+    font-family:'Glory', sans-serif;
+    font-size: 30pt;
+    text-align: center;
+    color: white;
+}
+
+#fundo {
+    background-image: url(back.jpg);
+    padding: 1%;
+}
+
+/* Caixa de texto + botão add */
+.caixaTexto {
+    text-align: center;
+    width: 100%;
+}
+
+.caixaTexto input {
+    width: 45%;
+    padding: 1%;
+    border: solid white 1px;
+}
+
+.caixaTexto button {
+    font-family: 'Comfortaa', cursive;
+    font-size: 12pt;
+    width: 10%;
+    padding: 1%;
+    cursor: pointer;
+    background-color: rgb(2, 167, 153);
+    border-radius: 5px;
+    border: solid rgb(2, 167, 153) 1px;
+    transition: 1s;
+}
+.caixaTexto button:hover {
+    background-color: rgb(1, 202, 95);
+    color: white;
+    border: solid white 1px;
+    transition: 1s;
+}
+
+
+/* Decoração da lista + botão delete + caixa check */ 
+.listaNaTela ul {
+    list-style: none;
+    text-align: center;
+}
+
+.listaNaTela li {
+    background-color: rgb(2, 167, 153);
+    margin: 0% 5% 1% 5%;
+    padding: 1%;
+    border-radius: 25px;
+    font-family: 'Comfortaa', cursive;
+    font-size: 14pt;
+    color: rgb(0, 0, 0);
+    transition: 1s;
+}
+
+.listaNaTela li:hover {
+    background-color: rgba(56, 211, 198, 0.705);
+    transition: 1s;
+}
+
+.listaNaTela button {
+    float: right;
+    background-color: white;
+    border: solid rgb(255, 255, 255) 2px;
+    width: 35px;
+    height: 30px;
+    border-radius: 100%;
+    transition: 1s;
+}
+
+.listaNaTela button:hover {
+    cursor: pointer;
+    background-color: red;
+    border:solid rgb(0, 0, 0) 2px;
+    transition: 1s;
+}
+
+.listaNaTela input {
+    cursor: pointer;
+    float: left;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+}

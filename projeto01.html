@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="estiloProjeto1.css"> -->
+    <link rel="stylesheet" href="estilo2Projeto1.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>Lista de Afazeres</title>
+</head>
+
+<body>
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-- HTML --~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+    <div id="fundo">
+        <h1>Minha lista de afazeres</h1>
+
+        <form>
+            <div class="caixaTexto">
+            <input id="insereTarefa" placeholder="Insira uma tarefa...">
+            <button type="button" onClick="verifica()" id="botAdd">ADICIONAR</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="listaNaTela">
+        <ul id="lista">
+        </ul>
+    </div>
+
+    <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-- JAVASCRIPT --~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+    <script>
+    
+        const inputElement = document.querySelector("input")
+        var insereTarefa = document.getElementById("lista")
+        var txt = document.getElementById("insereTarefa").value
+        const tarefa = JSON.stringify(localStorage.setItem('listaDeTarefa', txt))
+
+        /* função que verifica input sem texto */
+        function verifica() {
+            if (document.getElementById("insereTarefa").value.length != 0) {
+                adicionaTarefa()
+            } else {
+                alert("Insira uma tarefa!")
+            }
+        }
+        /* função que adiciona as tarefas */
+            function adicionaTarefa() {
+                let tarefa = document.createElement("li")
+                tarefa.innerHTML = document.getElementById("insereTarefa").value
+                insereTarefa.appendChild(tarefa)
+
+                    removeTarefa(tarefa)
+                    checkItem(tarefa)
+                    salvaLocal (tarefa)
+                    inputElement.value = ""        
+            }
+        
+        /* função de remover tarefas */
+            function removeTarefa(tarefa) {
+                let apagaItem = document.createElement("button")
+                let x = document.createTextNode('\uD83D\uDDD1\uFE0F')
+                apagaItem.className = "botaoDelete"
+                apagaItem.appendChild(x)
+                tarefa.appendChild(apagaItem)                
+                apagaItem.addEventListener("click", function(){
+                    if (confirm("Você quer mesmo excluir este item?")) {
+                        tarefa.innerHTML = apagaItem.parentElement.style.display = "none";}})
+                
+        }
+                
+        
+
+        /* função de dar check em um item */
+            function checkItem(tarefa) {
+                var check = document.createElement("input")
+                check.setAttribute("type","checkbox")
+                check.className = "botaoCheck"
+                tarefa.appendChild(check)
+                check.addEventListener("click", function() {
+                if (tarefa.style.textDecoration != "line-through") {
+                txt.innerHTML = tarefa.style.textDecoration = "line-through";
+                } else {
+                    txt.innerHTML = tarefa.style.textDecoration = "none"
+                }
+            })}
+                   
+        /* função de armazenar no localStorage */
+        function salvaLocal (tarefa) {
+            localStorage.getItem('listaDeTarefas', JSON.stringify(tarefa))
+        }
+
+    </script>
+
+</body>
+</html>
